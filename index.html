@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luis López - Backend Developer</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background: #f4f4f4;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        nav a {
+            color: teal;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .section {
+            display: none;
+            padding: 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #006064;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
+
+        .sidebar {
+            background: #009688;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #263238;
+            color: white;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#" onclick="show('about')">Acerca de Mí</a>
+        <a href="#" onclick="show('experience')">Experiencias</a>
+        <a href="#" onclick="show('skills')">Habilidades</a>
+        <a href="#" onclick="show('contact')">Contacto</a>
+    </nav>
+
+    <div id="about" class="section active">
+        <div class="title">Acerca de Mí</div>
+        <div class="grid">
+            <div class="sidebar">
+                <h3>Información Personal</h3>
+                <p><strong>Nacionalidad:</strong> Venezolana</p>
+                <p><strong>Cumpleaños:</strong> 03/08/1997</p>
+                <p><strong>Relación:</strong> Soltero</p>
+                <p><strong>Idiomas:</strong> Español, Portugués, Inglés básico</p>
+                <a href="#" style="color:white; display:inline-block; margin-top:20px;">📄 Ver Currículum Vitae</a>
+            </div>
+            <div>
+                <h2>Luis López</h2>
+                <p>Backend Developer con experiencia en Laravel, Node.js y Power BI. Apasionado por los datos y la
+                    automatización de procesos con soluciones web eficientes.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="experience" class="section">
+        <div class="title">Experiencias</div>
+        <ul>
+            <li><strong>Backend Developer - ICO</strong> (2024 - Actualidad)</li>
+            <li><strong>Backend Developer - Dubi</strong> (2023 - 2024)</li>
+            <li><strong>PHP Developer - RSISTEMS</strong> (2022 - 2023)</li>
+            <!-- Agrega más aquí -->
+        </ul>
+    </div>
+
+    <div id="skills" class="section">
+        <div class="title">Habilidades</div>
+        <div style="display:flex; gap: 60px; flex-wrap: wrap;">
+            <div>
+                <h4>Programación</h4>
+                <ul>
+                    <li>Laravel, Node.js</li>
+                    <li>SQL Server, MySQL, MongoDB</li>
+                    <li>JavaScript, Kotlin</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Herramientas</h4>
+                <ul>
+                    <li>Power BI</li>
+                    <li>Git, Trello</li>
+                    <li>Postman</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="section">
+        <div class="title">Contacto</div>
+        <p>📞 +55 929-XXX-XXXX</p>
+        <p>📧 luisdeveloper@gmail.com</p>
+        <p>🔗 <a href="https://linkedin.com/in/llopez594">LinkedIn</a> | <a
+                href="https://github.com/llopez594">GitHub</a></p>
+    </div>
+
+    <footer>
+        Luis López © 2025 – Desarrollado con HTML + CSS + JS 💻
+    </footer>
+
+    <script>
+        function show(id) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
