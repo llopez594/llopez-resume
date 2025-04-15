@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Luis López - Backend Developer</title>
     <link rel="icon" type="image/jpeg" href="img/photo1.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         body {
             margin: 0;
@@ -30,23 +32,12 @@
             font-weight: bold;
         }
 
-        /* .main-grid {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 30px;
-            max-width: 1200px;
-            margin: auto;
-            padding: 40px;
-        } */
-
         .main-grid {
             display: grid;
             grid-template-columns: 300px 1fr;
             gap: 12px;
             max-width: 1100px;
-            /* Limita el ancho del conjunto */
             margin: 0 auto;
-            /* Centra el grid horizontalmente */
             padding: 40px 20px;
         }
 
@@ -201,14 +192,241 @@
             font-size: 12px;
         }
 
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
 
+        .exp-card {
+            background: #f9f9f9;
+            border-left: 5px solid #009688;
+            padding: 16px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s;
+        }
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #263238;
+        .exp-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .exp-header h4 {
+            margin: 0;
+            font-size: 16px;
+            color: #004d40;
+        }
+
+        .exp-header span {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .exp-card p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .tech-chip {
+            display: flex;
+            align-items: center;
+            background: #0d2b35;
             color: white;
-            margin-top: 60px;
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 13px;
+            gap: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .tech-chip img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .skills-group {
+            margin-bottom: 30px;
+        }
+
+        .skills-group h3 {
+            color: #004d40;
+            font-size: 18px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        .skills-two-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 40px;
+        }
+
+        .skill-item {
+            margin-bottom: 12px;
+        }
+
+        .skill-item span {
+            font-size: 14px;
+            display: block;
+            margin-bottom: 4px;
+            color: #333;
+        }
+
+        .bar {
+            background: #e0e0e0;
+            border-radius: 10px;
+            height: 8px;
+            overflow: hidden;
+        }
+
+        .bar div {
+            height: 100%;
+            background: #009688;
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+
+        /* Responsive en móvil: 1 columna */
+        @media (max-width: 768px) {
+            .skills-two-cols {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 20px;
+            max-width: 600px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 16px;
+            color: #004d40;
+        }
+
+        .contact-item i {
+            font-size: 20px;
+            color: #009688;
+            width: 24px;
+            text-align: center;
+        }
+
+        .contact-item a {
+            color: #00695c;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+
+
+        .site-footer {
+            background: #10303a;
+            color: white;
+            padding-top: 20px;
+            font-size: 14px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0 40px;
+            gap: 20px;
+        }
+
+        .footer-column {
+            flex: 1 1 250px;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .footer-column i {
+            margin-right: 8px;
+            color: #26a69a;
+        }
+
+        .footer-column.center {
+            text-align: center;
+        }
+
+        .footer-logo {
+            max-height: 140px;
+            /* ✅ aumenta el tamaño */
+            opacity: 0.95;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .footer-column.social {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .footer-column.social a {
+            color: #26a69a;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column.social a:hover {
+            color: #4dd0e1;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 12px;
+            background: #2f3e46;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-column {
+                flex: 1 1 100%;
+            }
+
+            .footer-logo {
+                max-height: 70px;
+            }
         }
     </style>
 </head>
@@ -231,10 +449,10 @@
             <p><strong>Cumpleaños:</strong> 03/08/1997</p>
             <p><strong>Relación:</strong> Soltero</p>
             <p><strong>Idiomas:</strong> Español, Portugués, Inglés básico</p>
-            <a href="tu_cv.pdf" class="btn-cv ripple" target="_blank">📄 Ver Currículum Vitae</a>
+            <a href="https://www.linkedin.com/in/llopez594/details/experience/?locale=es_ES" class="btn-cv ripple"
+                target="_blank">📄 Ver Currículum Vitae</a>
         </div>
 
-        <!-- Contenido que cambia -->
         <div class="content">
             <div id="about" class="section active">
                 <div class="hero">
@@ -295,13 +513,53 @@
                     <h1>Luis López</h1>
                     <h3>- Backend Developer -</h3>
                 </div>
+
                 <div class="section-content">
-                    <ul>
-                        <li><strong>Backend Developer - ICO</strong> (2024 - Actualidad)</li>
-                        <li><strong>Backend Developer - Dubi</strong> (2023 - 2024)</li>
-                        <li><strong>PHP Developer - RSISTEMS</strong> (2022 - 2023)</li>
-                    </ul>
+                    <h2>Experiencia</h2>
+
+                    <div class="experience-grid">
+
+                        <div class="exp-card">
+                            <div class="exp-header">
+                                <h4>Backend Developer – ICO</h4>
+                                <span>2024 – Actualidad</span>
+                            </div>
+                            <div class="tech-stack">
+                                <div class="tech-chip">
+                                    <img src="https://cdn.simpleicons.org/laravel/ffffff" alt="Laravel" />
+                                    <span>Laravel</span>
+                                </div>
+                                <div class="tech-chip">
+                                    <img src="https://cdn.simpleicons.org/nodedotjs/ffffff" alt="Node.js" />
+                                    <span>Node.js</span>
+                                </div>
+                                <div class="tech-chip">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
+                                        alt="Power BI" />
+                                    <span>Power BI</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="exp-card">
+                            <div class="exp-header">
+                                <h4>Backend Developer – Dubi</h4>
+                                <span>2023 – 2024</span>
+                            </div>
+                            <p><strong>Tecnologías:</strong> Node.js, MongoDB, Express, Firebase</p>
+                        </div>
+
+                        <div class="exp-card">
+                            <div class="exp-header">
+                                <h4>PHP Developer – RSISTEMS</h4>
+                                <span>2022 – 2023</span>
+                            </div>
+                            <p><strong>Tecnologías:</strong> PHP, jQuery, MySQL</p>
+                        </div>
+
+                    </div>
                 </div>
+
             </div>
 
             <div id="skills" class="section">
@@ -309,26 +567,115 @@
                     <h1>Luis López</h1>
                     <h3>- Backend Developer -</h3>
                 </div>
+
                 <div class="section-content">
-                    <div style="display:flex; gap: 60px; flex-wrap: wrap;">
-                        <div>
-                            <h4>Programación</h4>
-                            <ul>
-                                <li>Laravel, Node.js</li>
-                                <li>SQL Server, MySQL, MongoDB</li>
-                                <li>JavaScript, Kotlin</li>
-                            </ul>
+                    <h2>Habilidades</h2>
+
+                    <div class="skills-group">
+                        <h3>Lenguajes</h3>
+                        <div class="skills-two-cols">
+                            <div class="skill-item"><span>HTML5</span>
+                                <div class="bar">
+                                    <div style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item"><span>JavaScript</span>
+                                <div class="bar">
+                                    <div style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item"><span>PHP</span>
+                                <div class="bar">
+                                    <div style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item"><span>Kotlin</span>
+                                <div class="bar">
+                                    <div style="width: 70%"></div>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <h4>Herramientas</h4>
-                            <ul>
-                                <li>Power BI</li>
-                                <li>Git, Trello</li>
-                                <li>Postman</li>
-                            </ul>
+                    </div>
+
+                    <div class="skills-group">
+                        <h3>Frameworks / Tools</h3>
+                        <div class="skills-two-cols">
+                            <div class="skill-item"><span>Laravel</span>
+                                <div class="bar">
+                                    <div style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item"><span>Node.js</span>
+                                <div class="bar">
+                                    <div style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item"><span>NestJS</span>
+                                <div class="bar">
+                                    <div style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item"><span>Docker</span>
+                                <div class="bar">
+                                    <div style="width: 65%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h3>Bases de Datos</h3>
+                        <div class="skills-two-cols">
+                            <div class="skill-item"><span>MySQL</span>
+                                <div class="bar">
+                                    <div style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item"><span>PostgreSQL</span>
+                                <div class="bar">
+                                    <div style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item"><span>SQL Server</span>
+                                <div class="bar">
+                                    <div style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item"><span>MongoDB</span>
+                                <div class="bar">
+                                    <div style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h3>Otros</h3>
+                        <div class="skills-two-cols">
+                            <div class="skill-item"><span>Power BI</span>
+                                <div class="bar">
+                                    <div style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item"><span>AJAX</span>
+                                <div class="bar">
+                                    <div style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item"><span>Git</span>
+                                <div class="bar">
+                                    <div style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item"><span>Java / Android</span>
+                                <div class="bar">
+                                    <div style="width: 65%"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <div id="contact" class="section">
@@ -336,18 +683,64 @@
                     <h1>Luis López</h1>
                     <h3>- Backend Developer -</h3>
                 </div>
+
                 <div class="section-content">
-                    <p>📞 +55 929-XXX-XXXX</p>
-                    <p>📧 luisdeveloper@gmail.com</p>
-                    <p>🔗 <a href="https://linkedin.com/in/llopez594">LinkedIn</a> | <a
-                            href="https://github.com/llopez594">GitHub</a></p>
+                    <h2>Contacto</h2>
+
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+55 929-XXX-XXXX</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>luisdeveloper@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <a href="https://linkedin.com/in/llopez594" target="_blank">linkedin.com/in/llopez594</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <a href="https://github.com/llopez594" target="_blank">github.com/llopez594</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Rorainópolis, Roraima, Brasil</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <footer>
-        Luis López © 2025 – Desarrollado con HTML + CSS + JS 💻
+        <footer class="site-footer">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <h4>Información de contacto</h4>
+                    <p><i class="fas fa-phone-alt"></i> +55 929-XXX-XXXX</p>
+                    <p><i class="fas fa-envelope"></i> luisdeveloper@gmail.com</p>
+                </div>
+
+                <div class="footer-column center">
+                    <img src="img/logo.png" alt="Luis Logo" class="footer-logo" />
+                </div>
+
+                <div class="footer-column social">
+                    <a href="https://linkedin.com/in/llopez594" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/llopez594" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                Luis López © 2025 💻
+            </div>
+        </footer>
+
     </footer>
 
     <script>
