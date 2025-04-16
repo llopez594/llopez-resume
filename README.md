@@ -4,7 +4,7 @@
 Aquí comparto mi experiencia, habilidades y formación como **Desarrollador Backend**, con enfoque en tecnologías modernas como **Laravel**, **Node.js**, **Docker**, **Power BI** y bases de datos **SQL/NoSQL**.
 
 🚀 Puedes ver el portafolio online en:  
-👉 [https://llopez594.github.io](https://llopez594.github.io) *(o tu URL real de GitHub Pages)*
+👉 [https://llopez594.github.io/llopez594-resume/](https://llopez594.github.io/llopez594-resume/) *(o tu URL real de GitHub Pages)*
 
 ---
 
