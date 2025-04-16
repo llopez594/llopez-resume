@@ -192,53 +192,61 @@
             font-size: 12px;
         }
 
-        .experience-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
+        .timeline {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding: 20px 0;
+            margin-left: 30px;
         }
 
-        .exp-card {
+        /* Timeline vertical line */
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 70%;
+            width: 4px;
+            height: 100%;
+            background-color: #009688;
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+
+        /* Individual item */
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            padding-right: 16px;
+        }
+
+        /* Card on the left */
+        .timeline-card {
+            width: 70%;
             background: #f9f9f9;
             border-left: 5px solid #009688;
             padding: 16px 20px;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-            transition: transform 0.2s;
+            position: relative;
+            z-index: 1;
         }
 
-        .exp-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .exp-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .exp-header h4 {
-            margin: 0;
+        .timeline-card h4 {
+            margin: 0 0 10px;
             font-size: 16px;
             color: #004d40;
         }
 
-        .exp-header span {
-            font-size: 13px;
-            color: #666;
-        }
-
-        .exp-card p {
-            margin: 0;
-            font-size: 14px;
-        }
-
+        /* Tech badges */
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-top: 10px;
         }
 
         .tech-chip {
@@ -257,6 +265,55 @@
         .tech-chip img {
             width: 16px;
             height: 16px;
+        }
+
+        /* Date on the right */
+        .timeline-date {
+            width: 30%;
+            text-align: left;
+            font-size: 14px;
+            color: #444;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Bullet for each entry */
+        .timeline-item::after {
+            content: "";
+            position: absolute;
+            left: 70%;
+            top: 22px;
+            width: 14px;
+            height: 14px;
+            background-color: #004d40;
+            border: 3px solid white;
+            border-radius: 50%;
+            z-index: 2;
+            transform: translateX(-50%);
+        }
+
+        @media (max-width: 768px) {
+            .timeline {
+                margin-left: 0;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .timeline-card,
+            .timeline-date {
+                width: 100%;
+            }
+
+            .timeline-item::after {
+                left: 20px;
+            }
         }
 
         .skills-group {
@@ -445,15 +502,16 @@
         <div class="sidebar">
             <img src="img/photo1.png" alt="Luis López" class="profile-img" />
             <h3>Información Personal</h3>
-            <p><strong>Nacionalidad:</strong> Venezolana</p>
-            <p><strong>Cumpleaños:</strong> 03/08/1997</p>
+            <p><strong>Nacionalidad:</strong> Venezolano</p>
+            <p><strong>Cumpleaños:</strong> 20/03/1996</p>
             <p><strong>Relación:</strong> Soltero</p>
-            <p><strong>Idiomas:</strong> Español, Portugués, Inglés básico</p>
+            <p><strong>Idiomas:</strong> Español, Portugués intermedio</p>
             <a href="https://www.linkedin.com/in/llopez594/details/experience/?locale=es_ES" class="btn-cv ripple"
                 target="_blank">📄 Ver Currículum Vitae</a>
         </div>
 
         <div class="content">
+
             <div id="about" class="section active">
                 <div class="hero">
                     <h1>Luis López</h1>
@@ -464,20 +522,37 @@
                     <!-- PERFIL -->
                     <h2>Perfil</h2>
                     <p>
-                        Hola, soy Luis López, egresado de la Universidad Nacional Experimental de Guayana (UNEG), con
-                        más de 3 años de experiencia en desarrollo backend y automatización de procesos. Soy
-                        especialista en Laravel y Node.js, con conocimientos en integración de datos, BI y soluciones
-                        escalables.
+                        Hola, soy <strong>Luis López</strong>, Desarrollador Backend con más de 6 años de experiencia en
+                        el desarrollo de
+                        soluciones web escalables y automatizadas. He trabajado con tecnologías como <strong>Laravel,
+                            PHP, Node.js</strong>,
+                        bases de datos <strong>relacionales y no relacionales</strong>, y herramientas como
+                        <strong>Power BI</strong> para
+                        la visualización y análisis de datos.
                     </p>
                     <p>
-                        Me apasiona crear sistemas que realmente resuelvan problemas, optimicen recursos y ayuden a
-                        tomar decisiones basadas en datos. También me he desenvuelto como formador y facilitador
-                        técnico.
+                        Durante mi trayectoria, he tenido la oportunidad de construir sistemas personalizados para
+                        empresas de diferentes
+                        sectores, optimizando procesos como control de inventario, ventas, generación de KPIs,
+                        integración de APIs y gestión
+                        documental. Mi enfoque siempre ha estado en crear soluciones <strong>eficientes, seguras y bien
+                            estructuradas</strong>,
+                        siguiendo principios como <strong>arquitectura limpia y SOLID</strong>.
                     </p>
                     <p>
-                        Hello, I’m Luis López, a backend developer from Venezuela with over 3 years of experience in
-                        Laravel and Node.js, and a passion for automation, process optimization and data-driven
-                        solutions.
+                        Disfruto colaborar en equipo, aportar valor técnico y mantenerme en constante aprendizaje.
+                        Actualmente me encuentro
+                        en Brasil, abierto a oportunidades <strong>remotas o presenciales</strong>, y con alta
+                        disposición para integrarme a
+                        nuevos proyectos desafiantes.
+                    </p>
+                    <p>
+                        Hi, I'm <strong>Luis López</strong>, a backend developer with over 6 years of experience
+                        building scalable web
+                        solutions using Laravel, Node.js and modern database systems. I focus on clean architecture,
+                        data-driven systems,
+                        and team collaboration. I'm currently based in Brazil and open to remote or on-site
+                        opportunities.
                     </p>
 
                     <!-- EDUCACIÓN -->
@@ -485,25 +560,40 @@
                     <div class="education-item">
                         <img src="img/uneg.png" alt="UNEG" />
                         <div class="education-content">
-                            <h4>Universidad Nacional Experimental de Guayana - Universidad</h4>
+                            <h4>Universidad Nacional Experimental de Guayana - Ingeniería en Informática</h4>
                             <p>
-                                Universidad Venezolana fundada en 1979. Me gradué como Técnico Superior y posteriormente
-                                culminé estudios universitarios en informática. La UNEG es reconocida por su enfoque en
-                                innovación, desarrollo y formación integral de profesionales.
+                                Actualmente curso el 7mo semestre en esta casa de estudios reconocida por su compromiso
+                                con la innovación, el desarrollo y la formación integral de profesionales en el área
+                                tecnológica. La UNEG fue fundada el 9 de marzo de 1982 mediante decreto presidencial,
+                                consolidándose como una de las principales instituciones educativas del oriente del
+                                país.
                             </p>
                         </div>
-                        <span class="date-range">2014 - 2019</span>
+                        <span class="date-range">2014 - actual</span>
+                    </div>
+                    <div class="education-item">
+                        <img src="img/utsguayana.png" alt="UTS-Guayana" />
+                        <div class="education-content">
+                            <h4>I.U.T. Antonio José de Sucre - TSU en Informática</h4>
+                            <p>
+                                Centro de formación técnica superior con enfoque práctico. Me gradué como Técnico
+                                Superior Universitario, adquiriendo competencias sólidas en desarrollo de software y
+                                bases de datos.
+                            </p>
+                        </div>
+                        <span class="date-range">2019 - 2024</span>
                     </div>
                     <div class="education-item">
                         <img src="img/uecsa.jpg" alt="Nuestra Señora de Lourdes" />
                         <div class="education-content">
-                            <h4>U.E.Colegio San Agustín - Bachiller</h4>
+                            <h4>U.E.Colegio San Agustín - Bachiller en Ciencias</h4>
                             <p>
-                                Institución educativa orientada a la formación académica, ciudadana y moral. Recibí allí
-                                una educación integral que reforzó mis valores y habilidades desde temprana edad.
+                                Institución orientada a la formación académica, ciudadana y moral. Recibí allí una
+                                educación integral que reforzó mis valores, disciplina y habilidades desde temprana
+                                edad.
                             </p>
                         </div>
-                        <span class="date-range">2007 - 2014</span>
+                        <span class="date-range">2008 - 2013</span>
                     </div>
                 </div>
             </div>
@@ -517,47 +607,186 @@
                 <div class="section-content">
                     <h2>Experiencia</h2>
 
-                    <div class="experience-grid">
+                    <div class="timeline">
 
-                        <div class="exp-card">
-                            <div class="exp-header">
-                                <h4>Backend Developer – ICO</h4>
-                                <span>2024 – Actualidad</span>
+                        <!-- ICO -->
+                        <div class="timeline-item">
+                            <div class="timeline-card left">
+                                <h4>Backend Developer – ICO - International Certification Organization</h4>
+                                <div class="tech-stack">
+                                    <div class="tech-chip">
+                                        <img src="https://cdn.simpleicons.org/laravel/ffffff" alt="Laravel" />
+                                        <span>Laravel</span>
+                                    </div>
+                                    <div class="tech-chip">
+                                        <img src="https://cdn.simpleicons.org/mysql" alt="Mysql" />
+                                        <span>MySQL</span>
+                                    </div>
+                                    <div class="tech-chip">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
+                                            alt="Power BI" />
+                                        <span>Power BI</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="tech-stack">
-                                <div class="tech-chip">
-                                    <img src="https://cdn.simpleicons.org/laravel/ffffff" alt="Laravel" />
-                                    <span>Laravel</span>
-                                </div>
-                                <div class="tech-chip">
-                                    <img src="https://cdn.simpleicons.org/nodedotjs/ffffff" alt="Node.js" />
-                                    <span>Node.js</span>
-                                </div>
-                                <div class="tech-chip">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
-                                        alt="Power BI" />
-                                    <span>Power BI</span>
-                                </div>
-                            </div>
+                            <div class="timeline-date right">ago.2024 – Actualidad</div>
                         </div>
 
-                        <div class="exp-card">
-                            <div class="exp-header">
-                                <h4>Backend Developer – Dubi</h4>
-                                <span>2023 – 2024</span>
+                        <!-- Pets -->
+                        <div class="timeline-item">
+                            <div class="timeline-card left">
+                                <h4>Backend Developer – Pets</h4>
+                                <div class="tech-stack">
+                                    <div class="tech-chip">
+                                        <img src="https://cdn.simpleicons.org/mongodb" alt="MongoDB" />
+                                        <span>MongoDB</span>
+                                    </div>
+                                    <div class="tech-chip">
+                                        <img src="https://cdn.simpleicons.org/nodedotjs" alt="Node.js" />
+                                        <span>Node.js</span>
+                                    </div>
+                                </div>
                             </div>
-                            <p><strong>Tecnologías:</strong> Node.js, MongoDB, Express, Firebase</p>
+                            <div class="timeline-date right">abr.2023 – ago.2024</div>
                         </div>
 
-                        <div class="exp-card">
-                            <div class="exp-header">
+                        <!-- Sempiterno Group -->
+                        <div class="timeline-item">
+                            <div class="timeline-card left">
+                                <h4>PHP Developer – Sempiterno Group</h4>
+                                <div class="tech-stack">
+                                    <div class="tech-chip">
+                                        <img src="https://cdn.simpleicons.org/docker" alt="Docker" />
+                                        <span>Docker</span>
+                                    </div>
+                                    <div class="tech-chip">
+                                        <img src="https://cdn.simpleicons.org/php" alt="PHP" />
+                                        <span>PHP</span>
+                                    </div>
+                                    <div class="tech-chip">
+                                        <img src="https://cdn.simpleicons.org/javascript" alt="JS" />
+                                        <span>JS</span>
+                                    </div>
+                                    <div class="tech-chip">
+                                        <img src="https://cdn.simpleicons.org/html5" alt="HTML5" />
+                                        <span>HTML5</span>
+                                    </div>
+                                    <div class="tech-chip">
+                                        <img src="https://img.icons8.com/color/48/microsoft-sql-server.png"
+                                            alt="Microsoft SQL Server" />
+                                        <span>Microsoft SQL Server</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-date right">feb.2023 – may.2023</div>
+                        </div>
+
+                        <!-- RSISTEMS -->
+                        <div class="timeline-item">
+                            <div class="timeline-card left">
                                 <h4>PHP Developer – RSISTEMS</h4>
-                                <span>2022 – 2023</span>
+                                <div class="tech-stack">
+                                    <div class="tech-chip">
+                                        <img src="https://cdn.simpleicons.org/php" alt="PHP" />
+                                        <span>PHP</span>
+                                    </div>
+                                    <div class="tech-chip">
+                                        <img src="https://cdn.simpleicons.org/javascript" alt="JS" />
+                                        <span>JS</span>
+                                    </div>
+                                    <div class="tech-chip">
+                                        <img src="https://cdn.simpleicons.org/html5" alt="HTML5" />
+                                        <span>HTML5</span>
+                                    </div>
+                                    <div class="tech-chip">
+                                        <img src="https://img.icons8.com/color/48/microsoft-sql-server.png"
+                                            alt="Microsoft SQL Server" />
+                                        <span>Microsoft SQL Server</span>
+                                    </div>
+                                </div>
                             </div>
-                            <p><strong>Tecnologías:</strong> PHP, jQuery, MySQL</p>
+                            <div class="timeline-date right">feb.2022 – ene.2023</div>
+                        </div>
+
+                        <!-- Confisur -->
+                        <div class="timeline-item">
+                            <div class="timeline-card left">
+                                <h4>PHP Developer – Distribuciones Confisur, C.A.</h4>
+                                <div class="tech-stack">
+                                    <div class="tech-chip">
+                                        <img src="https://cdn.simpleicons.org/php" alt="PHP" />
+                                        <span>PHP</span>
+                                    </div>
+                                    <div class="tech-chip">
+                                        <img src="https://cdn.simpleicons.org/javascript" alt="JS" />
+                                        <span>JS</span>
+                                    </div>
+                                    <div class="tech-chip">
+                                        <img src="https://cdn.simpleicons.org/html5" alt="HTML5" />
+                                        <span>HTML5</span>
+                                    </div>
+                                    <div class="tech-chip">
+                                        <img src="https://img.icons8.com/color/48/microsoft-sql-server.png"
+                                            alt="Microsoft SQL Server" />
+                                        <span>Microsoft SQL Server</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-date right">feb.2022 – ene.2023</div>
+                        </div>
+
+                        <!-- FrooGeT -->
+                        <div class="timeline-item">
+                            <div class="timeline-card left">
+                                <h4>Android Developer – FrooGeT.</h4>
+                                <div class="tech-stack">
+                                    <div class="tech-chip">
+                                        <img src="https://cdn.simpleicons.org/kotlin" alt="Kotlin" />
+                                        <span>Kotlin</span>
+                                    </div>
+                                    <div class="tech-chip">
+                                        <img src="https://cdn.simpleicons.org/android" alt="Android" />
+                                        <span>Android</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-date right">may.2021 – dic.2021</div>
+                        </div>
+
+                        <!-- Repuestos Coreanos -->
+                        <div class="timeline-item">
+                            <div class="timeline-card left">
+                                <h4>Android Developer – Repuestos Coreanos Smith Rodriguez C.A.</h4>
+                                <div class="tech-stack">
+                                    <div class="tech-chip">
+                                        <img src="https://cdn.simpleicons.org/laravel/ffffff" alt="Laravel" />
+                                        <span>Laravel</span>
+                                    </div>
+                                    <div class="tech-chip">
+                                        <img src="https://img.icons8.com/color/48/java-coffee-cup-logo.png"
+                                            alt="Java" />
+                                        <span>Java</span>
+                                    </div>
+                                    <div class="tech-chip">
+                                        <img src="https://cdn.simpleicons.org/kotlin" alt="Kotlin" />
+                                        <span>Kotlin</span>
+                                    </div>
+                                    <div class="tech-chip">
+                                        <img src="https://cdn.simpleicons.org/android" alt="Android" />
+                                        <span>Android</span>
+                                    </div>
+                                    <div class="tech-chip">
+                                        <img src="https://img.icons8.com/color/48/microsoft-sql-server.png"
+                                            alt="Microsoft SQL Server" />
+                                        <span>Microsoft SQL Server</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline-date right">dic.2017 – dic.2019</div>
                         </div>
 
                     </div>
+
                 </div>
 
             </div>
@@ -690,11 +919,11 @@
                     <div class="contact-grid">
                         <div class="contact-item">
                             <i class="fas fa-phone-alt"></i>
-                            <span>+55 929-XXX-XXXX</span>
+                            <span>+55 (95) 99-118-2924</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <span>luisdeveloper@gmail.com</span>
+                            <span>luisjlopez594@gmail.com</span>
                         </div>
                         <div class="contact-item">
                             <i class="fab fa-linkedin"></i>
@@ -719,8 +948,8 @@
             <div class="footer-top">
                 <div class="footer-column">
                     <h4>Información de contacto</h4>
-                    <p><i class="fas fa-phone-alt"></i> +55 929-XXX-XXXX</p>
-                    <p><i class="fas fa-envelope"></i> luisdeveloper@gmail.com</p>
+                    <p><i class="fas fa-phone-alt"></i> +55 (95) 99-118-2924</p>
+                    <p><i class="fas fa-envelope"></i> luisjlopez594@gmail.com</p>
                 </div>
 
                 <div class="footer-column center">
@@ -730,9 +959,7 @@
                 <div class="footer-column social">
                     <a href="https://linkedin.com/in/llopez594" target="_blank"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com/llopez594" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-behance"></i></a>
                 </div>
             </div>
 
@@ -744,6 +971,11 @@
     </footer>
 
     <script>
+        $(document).ready(function () {
+            const lastSection = localStorage.getItem('lastSection') || 'about';
+            show(lastSection);
+        });
+
         document.querySelectorAll('.ripple').forEach(btn => {
             btn.addEventListener('click', function (e) {
                 this.classList.remove('clicked');
@@ -753,12 +985,17 @@
         });
 
         function show(id) {
+            localStorage.setItem('lastSection', id);
+
             document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
             document.getElementById(id).classList.add('active');
 
-            document.querySelectorAll('nav a').forEach(a => {
+            /* document.querySelectorAll('nav a').forEach(a => {
                 a.classList.toggle('active-link', a.dataset.target === id);
-            });
+            }); */
+
+            document.querySelectorAll('nav a').forEach(link => link.classList.remove('active-link'));
+            document.querySelector(`nav a[data-target="${id}"]`).classList.add('active-link');
         }
 
 
