@@ -237,9 +237,16 @@
         }
 
         .timeline-card h4 {
-            margin: 0 0 10px;
+            margin: 0;
             font-size: 16px;
             color: #004d40;
+        }
+
+        .timeline-card .company {
+            margin: 4px 0 8px;
+            font-size: 14px;
+            color: #333;
+            font-weight: normal;
         }
 
         /* Tech badges */
@@ -255,10 +262,13 @@
             background: #0d2b35;
             color: white;
             border-radius: 999px;
-            padding: 6px 12px;
-            font-size: 13px;
-            gap: 6px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 4px 10px;
+            /* antes 6px 12px */
+            font-size: 11px;
+            /* antes 13px */
+            gap: 4px;
+            /* antes 6px */
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s;
         }
 
@@ -396,6 +406,28 @@
 
         .contact-item a:hover {
             text-decoration: underline;
+        }
+
+        .scroll-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            background-color: #009688;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+            transition: transform 0.2s ease, opacity 0.3s ease;
+        }
+
+        .scroll-button:hover {
+            transform: scale(1.1);
         }
 
 
@@ -612,7 +644,8 @@
                         <!-- ICO -->
                         <div class="timeline-item">
                             <div class="timeline-card left">
-                                <h4>Backend Developer – ICO - International Certification Organization</h4>
+                                <h4>Backend Developer</h4>
+                                <p class="company">ICO - International Certification Organization</p>
                                 <div class="tech-stack">
                                     <div class="tech-chip">
                                         <img src="https://cdn.simpleicons.org/laravel/ffffff" alt="Laravel" />
@@ -635,7 +668,8 @@
                         <!-- Pets -->
                         <div class="timeline-item">
                             <div class="timeline-card left">
-                                <h4>Backend Developer – Pets</h4>
+                                <h4>Backend Developer – 1 año, 5 meses</h4>
+                                <p class="company">Pets</p>
                                 <div class="tech-stack">
                                     <div class="tech-chip">
                                         <img src="https://cdn.simpleicons.org/mongodb" alt="MongoDB" />
@@ -653,7 +687,8 @@
                         <!-- Sempiterno Group -->
                         <div class="timeline-item">
                             <div class="timeline-card left">
-                                <h4>PHP Developer – Sempiterno Group</h4>
+                                <h4>PHP Developer – 4 meses</h4>
+                                <p class="company">Sempiterno Group</p>
                                 <div class="tech-stack">
                                     <div class="tech-chip">
                                         <img src="https://cdn.simpleicons.org/docker" alt="Docker" />
@@ -684,7 +719,8 @@
                         <!-- RSISTEMS -->
                         <div class="timeline-item">
                             <div class="timeline-card left">
-                                <h4>PHP Developer – RSISTEMS</h4>
+                                <h4>PHP Developer– 1 año</h4>
+                                <p class="company">RSISTEMS C.A.</p>
                                 <div class="tech-stack">
                                     <div class="tech-chip">
                                         <img src="https://cdn.simpleicons.org/php" alt="PHP" />
@@ -711,7 +747,8 @@
                         <!-- Confisur -->
                         <div class="timeline-item">
                             <div class="timeline-card left">
-                                <h4>PHP Developer – Distribuciones Confisur, C.A.</h4>
+                                <h4>PHP Developer – 2 años</h4>
+                                <p class="company">Distribuciones Confisur, C.A.</p>
                                 <div class="tech-stack">
                                     <div class="tech-chip">
                                         <img src="https://cdn.simpleicons.org/php" alt="PHP" />
@@ -738,7 +775,8 @@
                         <!-- FrooGeT -->
                         <div class="timeline-item">
                             <div class="timeline-card left">
-                                <h4>Android Developer – FrooGeT.</h4>
+                                <h4>Android Developer – 8 meses</h4>
+                                <p class="company">FrooGeT</p>
                                 <div class="tech-stack">
                                     <div class="tech-chip">
                                         <img src="https://cdn.simpleicons.org/kotlin" alt="Kotlin" />
@@ -756,7 +794,8 @@
                         <!-- Repuestos Coreanos -->
                         <div class="timeline-item">
                             <div class="timeline-card left">
-                                <h4>Android Developer – Repuestos Coreanos Smith Rodriguez C.A.</h4>
+                                <h4>Android Developer – 2 años</h4>
+                                <p class="company">Repuestos Coreanos Smith Rodriguez C.A.</p>
                                 <div class="tech-stack">
                                     <div class="tech-chip">
                                         <img src="https://cdn.simpleicons.org/laravel/ffffff" alt="Laravel" />
@@ -788,7 +827,6 @@
                     </div>
 
                 </div>
-
             </div>
 
             <div id="skills" class="section">
@@ -941,6 +979,8 @@
                 </div>
             </div>
         </div>
+
+        <button id="scrollToTopBtn" class="scroll-button" title="Volver arriba">⬆</button>
     </div>
 
     <footer>
@@ -971,6 +1011,23 @@
     </footer>
 
     <script>
+        const scrollBtn = document.getElementById("scrollToTopBtn");
+
+        window.addEventListener("scroll", () => {
+            const scrolledFromTop = window.scrollY || document.documentElement.scrollTop;
+            const documentHeight = document.documentElement.scrollHeight;
+            const windowHeight = window.innerHeight;
+
+            const reachedBottom = (scrolledFromTop + windowHeight) >= (documentHeight - 50);
+
+            scrollBtn.style.display = reachedBottom ? "block" : "none";
+        });
+
+        scrollBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+
         $(document).ready(function () {
             const lastSection = localStorage.getItem('lastSection') || 'about';
             show(lastSection);
