@@ -1,3 +1,28 @@
+$(document).ready(function () {
+
+    const timeline = $(".timeline");
+    
+    experiences.forEach(exp => {
+        const tagsHtml = exp.tags.map((tag, i) => `
+            <div class="tech-chip">
+                <img src="${exp.icons[i]}" alt="${tag}" />
+                <span>${tag}</span>
+            </div>`).join("");
+
+        const html = `
+        <div class="timeline-item">
+            <div class="timeline-card left">
+                <h4>${exp.title}</h4>
+                <p class="company">${exp.company}</p>
+                <div class="tech-stack">${tagsHtml}</div>
+            </div>
+            <div class="timeline-date right">${exp.duration}</div>
+        </div>`;
+
+        timeline.append(html);
+    });
+});
+
 const experiences = [
     {
       title: "Backend Developer",
