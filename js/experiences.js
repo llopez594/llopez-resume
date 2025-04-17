@@ -39,23 +39,24 @@ const experiences = [
       title: "Backend Developer – 1 año, 5 meses",
       duration: "abr.2023 – ago.2024",
       company: "Pets",
-      tags: ["MongoDB", "Node.js"],
+      tags: ["Node.js", "Laravel", "MongoDB"],
       icons: [
-        "https://cdn.simpleicons.org/mongodb",
-        "https://cdn.simpleicons.org/nodedotjs"
+        "https://cdn.simpleicons.org/nodedotjs",
+        "https://cdn.simpleicons.org/laravel/ffffff",
+        "https://cdn.simpleicons.org/mongodb"
       ]
     },
     {
       title: "PHP Developer – 4 meses",
       duration: "feb.2023 – may.2023",
       company: "Sempiterno Group",
-      tags: ["Docker", "PHP", "JS", "HTML5", "Microsoft SQL Server"],
+      tags: ["Docker", "PHP", "JS", "HTML5", "MySQL"],
       icons: [
         "https://cdn.simpleicons.org/docker",
         "https://cdn.simpleicons.org/php",
         "https://cdn.simpleicons.org/javascript",
         "https://cdn.simpleicons.org/html5",
-        "https://img.icons8.com/color/48/microsoft-sql-server.png"
+        "https://cdn.simpleicons.org/mysql"
       ]
     },
     {

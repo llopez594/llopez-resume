@@ -13,23 +13,31 @@
 <body>
 
     <nav>
-        <a href="#" data-target="about" onclick="show('about')" class="active-link">Acerca de Mí</a>
-        <a href="#" data-target="experience" onclick="show('experience')">Experiencias</a>
-        <a href="#" data-target="skills" onclick="show('skills')">Habilidades</a>
-        <a href="#" data-target="contact" onclick="show('contact')">Contacto</a>
+        <a href="#" data-target="about" onclick="show('about')" class="active-link" data-lang="nav_about">Acerca de
+            Mí</a>
+        <a href="#" data-target="experience" onclick="show('experience')" data-lang="nav_experience">Experiencias</a>
+        <a href="#" data-target="skills" onclick="show('skills')" data-lang="nav_skills">Habilidades</a>
+        <a href="#" data-target="contact" onclick="show('contact')" data-lang="nav_contact">Contacto</a>
     </nav>
+    <div style="text-align: right; padding: 10px 20px;">
+        <select id="languageSelector">
+            <option value="es">Español</option>
+            <option value="pt">Português</option>
+        </select>
+    </div>
+
 
     <div class="main-grid">
         <!-- Sidebar -->
         <div class="sidebar">
             <img src="./img/photo1.png" alt="Luis López" class="profile-img" />
-            <h3>Información Personal</h3>
-            <p><strong>Nacionalidad:</strong> Venezolano</p>
-            <p><strong>Cumpleaños:</strong> 20/03/1996</p>
-            <p><strong>Relación:</strong> Soltero</p>
-            <p><strong>Idiomas:</strong> Español, Portugués intermedio</p>
+            <h3 data-lang="info_title">Información Personal</h3>
+            <p data-lang="nationality"><strong>Nacionalidad:</strong> Venezolano</p>
+            <p data-lang="birthdate"><strong>Cumpleaños:</strong> 20/03/1996</p>
+            <p data-lang="status"><strong>Relación:</strong> Soltero</p>
+            <p data-lang="languages"><strong>Idiomas:</strong> Español, Portugués intermedio</p>
             <a href="https://www.linkedin.com/in/llopez594/details/experience/?locale=es_ES" class="btn-cv ripple"
-                target="_blank">📄 Ver Currículum Vitae</a>
+                target="_blank" data-lang="cv_button">📄 Ver Currículum Vitae</a>
         </div>
 
         <div class="content">
@@ -37,48 +45,18 @@
             <div id="about" class="section active">
                 <div class="hero">
                     <h1>Luis López</h1>
-                    <h3>- Backend Developer -</h3>
+                    <h3 data-lang="role">- Backend Developer -</h3>
                 </div>
                 <div class="section-content">
 
-                    <!-- PERFIL -->
                     <h2>Perfil</h2>
-                    <p>
-                        Hola, soy <strong>Luis López</strong>, Desarrollador Backend con más de 6 años de experiencia en
-                        el desarrollo de
-                        soluciones web escalables y automatizadas. He trabajado con tecnologías como <strong>Laravel,
-                            PHP, Node.js</strong>,
-                        bases de datos <strong>relacionales y no relacionales</strong>, y herramientas como
-                        <strong>Power BI</strong> para
-                        la visualización y análisis de datos.
-                    </p>
-                    <p>
-                        Durante mi trayectoria, he tenido la oportunidad de construir sistemas personalizados para
-                        empresas de diferentes
-                        sectores, optimizando procesos como control de inventario, ventas, generación de KPIs,
-                        integración de APIs y gestión
-                        documental. Mi enfoque siempre ha estado en crear soluciones <strong>eficientes, seguras y bien
-                            estructuradas</strong>,
-                        siguiendo principios como <strong>arquitectura limpia y SOLID</strong>.
-                    </p>
-                    <p>
-                        Disfruto colaborar en equipo, aportar valor técnico y mantenerme en constante aprendizaje.
-                        Actualmente me encuentro
-                        en Brasil, abierto a oportunidades <strong>remotas o presenciales</strong>, y con alta
-                        disposición para integrarme a
-                        nuevos proyectos desafiantes.
-                    </p>
-                    <p>
-                        Hi, I'm <strong>Luis López</strong>, a backend developer with over 6 years of experience
-                        building scalable web
-                        solutions using Laravel, Node.js and modern database systems. I focus on clean architecture,
-                        data-driven systems,
-                        and team collaboration. I'm currently based in Brazil and open to remote or on-site
-                        opportunities.
-                    </p>
 
-                    <!-- EDUCACIÓN -->
-                    <h2>Educación</h2>
+                    <div class="perfil-container">
+                        <!-- jQuery -->
+                    </div>
+
+                    <h2 data-lang="education_title">Educación</h2>
+
                     <div class="education-container">
                         <!-- jQuery -->
                     </div>
@@ -88,11 +66,11 @@
             <div id="experience" class="section">
                 <div class="hero">
                     <h1>Luis López</h1>
-                    <h3>- Backend Developer -</h3>
+                    <h3 data-lang="role">- Backend Developer -</h3>
                 </div>
 
                 <div class="section-content">
-                    <h2>Experiencia</h2>
+                    <h2 data-lang="experience_title">Experiencia</h2>
 
                     <div class="timeline">
                         <!-- jQuery -->
@@ -104,7 +82,7 @@
             <div id="skills" class="section">
                 <div class="hero">
                     <h1>Luis López</h1>
-                    <h3>- Backend Developer -</h3>
+                    <h3 data-lang="role">- Backend Developer -</h3>
                 </div>
 
                 <div class="section-content">
@@ -259,11 +237,11 @@
             <div id="contact" class="section">
                 <div class="hero">
                     <h1>Luis López</h1>
-                    <h3>- Backend Developer -</h3>
+                    <h3 data-lang="role">- Backend Developer -</h3>
                 </div>
 
                 <div class="section-content">
-                    <h2>Contacto</h2>
+                    <h2 data-lang="contact_title">Contacto</h2>
 
                     <div class="contact-grid">
                         <div class="contact-item">
@@ -298,7 +276,7 @@
         <footer class="site-footer">
             <div class="footer-top">
                 <div class="footer-column">
-                    <h4>Información de contacto</h4>
+                    <h4 data-lang="footer_contact">Información de contacto</h4>
                     <p><i class="fas fa-phone-alt"></i> +55 (95) 99-118-2924</p>
                     <p><i class="fas fa-envelope"></i> luisjlopez594@gmail.com</p>
                 </div>
@@ -323,8 +301,10 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
+    <script src="./js/perfil.js"></script>
     <script src="./js/education.js"></script>
     <script src="./js/experiences.js"></script>
+    <script src="./js/main_lang.js"></script>
 </body>
 
 </html>
