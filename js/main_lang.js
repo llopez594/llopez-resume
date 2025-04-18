@@ -30,6 +30,7 @@ function setLanguage(lang) {
     renderPerfil(lang);
     renderEducation(lang);
     renderExperiences(lang);
+    renderSkills(lang);
 }
 
 
