@@ -25,6 +25,11 @@ function setLanguage(lang) {
             $(this).html(translation);
         }
     });
+
+    // Render dinámico
+    renderPerfil(lang);
+    renderEducation(lang);
+    renderExperiences(lang);
 }
 
 
