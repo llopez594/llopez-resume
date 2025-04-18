@@ -5,13 +5,26 @@ body {
 
 nav {
     background: #f4f4f4;
-    padding: 15px;
+    padding: 15px 30px;
     position: sticky;
     top: 0;
     z-index: 999;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.nav-content {
+    position: relative;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
     gap: 40px;
 }
 
@@ -19,6 +32,22 @@ nav a {
     color: teal;
     text-decoration: none;
     font-weight: bold;
+}
+
+.language-selector {
+    margin-left: auto;
+    padding: 5px 10px;
+    border: 1px solid teal;
+    border-radius: 5px;
+    background-color: white;
+    color: teal;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.language-selector:hover {
+    background-color: #e0f2f1;
 }
 
 .main-grid {
@@ -146,6 +175,10 @@ nav a.active-link {
     color: #00695c;
 }
 
+.perfil-container p {
+    text-align: justify;
+}
+
 .education-item {
     display: flex;
     align-items: flex-start;
@@ -169,6 +202,7 @@ nav a.active-link {
 .education-content p {
     margin: 0;
     line-height: 1.5;
+    text-align: justify;
 }
 
 .date-range {
