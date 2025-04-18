@@ -13,18 +13,22 @@
 <body>
 
     <nav>
-        <a href="#" data-target="about" onclick="show('about')" class="active-link" data-lang="nav_about">Acerca de
-            Mí</a>
-        <a href="#" data-target="experience" onclick="show('experience')" data-lang="nav_experience">Experiencias</a>
-        <a href="#" data-target="skills" onclick="show('skills')" data-lang="nav_skills">Habilidades</a>
-        <a href="#" data-target="contact" onclick="show('contact')" data-lang="nav_contact">Contacto</a>
+        <div class="nav-content">
+            <div class="nav-links">
+                <a href="#" data-target="about" onclick="show('about')" class="active-link" data-lang="nav_about">Acerca
+                    de
+                    Mí</a>
+                <a href="#" data-target="experience" onclick="show('experience')"
+                    data-lang="nav_experience">Experiencias</a>
+                <a href="#" data-target="skills" onclick="show('skills')" data-lang="nav_skills">Habilidades</a>
+                <a href="#" data-target="contact" onclick="show('contact')" data-lang="nav_contact">Contacto</a>
+            </div>
+            <select id="languageSelector" class="language-selector">
+                <option value="es">Español</option>
+                <option value="pt">Português</option>
+            </select>
+        </div>
     </nav>
-    <div style="text-align: right; padding: 10px 20px;">
-        <select id="languageSelector">
-            <option value="es">Español</option>
-            <option value="pt">Português</option>
-        </select>
-    </div>
 
 
     <div class="main-grid">
