@@ -146,6 +146,10 @@ nav a.active-link {
     color: #00695c;
 }
 
+.perfil-container p {
+    text-align: justify;
+}
+
 .education-item {
     display: flex;
     align-items: flex-start;
@@ -169,6 +173,7 @@ nav a.active-link {
 .education-content p {
     margin: 0;
     line-height: 1.5;
+    text-align: justify;
 }
 
 .date-range {
