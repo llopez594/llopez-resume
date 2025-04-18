@@ -31,17 +31,18 @@ const skills = {
     es: {
         "Lenguajes": [
             { name: "HTML5", level: 80 },
-            { name: "CSS3", level: 50 },
+            { name: "CSS3", level: 60 },
             { name: "JavaScript", level: 75 },
             { name: "PHP", level: 100 },
-            { name: "Kotlin / Android", level: 90 }
+            { name: "Kotlin / Android", level: 90 },
+            { name: "C#", level: 50 }
         ],
         "Frameworks / Tools": [
             { name: "Laravel", level: 100 },
             { name: "Node.js", level: 80 },
             { name: "NestJS", level: 65 },
             { name: "React.js", level: 50 },
-            { name: "Docker", level: 65 },
+            { name: "Docker", level: 75 },
             { name: "Bootstrap 4.1", level: 85 }
         ],
         "Bases de Datos": [
@@ -66,17 +67,18 @@ const skills = {
     pt: {
         "Linguagens": [
             { name: "HTML5", level: 80 },
-            { name: "CSS3", level: 50 },
+            { name: "CSS3", level: 60 },
             { name: "JavaScript", level: 75 },
             { name: "PHP", level: 100 },
-            { name: "Kotlin / Android", level: 90 }
+            { name: "Kotlin / Android", level: 90 },
+            { name: "C#", level: 50 }
         ],
         "Frameworks / Ferramentas": [
             { name: "Laravel", level: 100 },
             { name: "Node.js", level: 80 },
             { name: "NestJS", level: 65 },
             { name: "React.js", level: 50 },
-            { name: "Docker", level: 65 },
+            { name: "Docker", level: 75 },
             { name: "Bootstrap 4.1", level: 85 }
         ],
         "Bancos de Dados": [
