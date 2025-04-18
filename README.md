@@ -4,11 +4,11 @@
 Aquí comparto mi experiencia, habilidades y formación como **Desarrollador Backend**, con enfoque en tecnologías modernas como **Laravel**, **Node.js**, **Docker**, **Power BI** y bases de datos **SQL/NoSQL**.
 
 🚀 Puedes ver el portafolio online en:  
-👉 [https://llopez594.github.io/llopez594-resume/](https://llopez594.github.io/llopez594-resume/) *(o tu URL real de GitHub Pages)*
+👉 [https://llopez594.github.io/llopez-resume/](https://llopez594.github.io/llopez-resume/)
 
 ---
 
-## 🌎 Multilenguaje (En construccion)
+## 🌎 Multilenguaje
 
 El sitio detecta automáticamente el idioma del navegador (Español o Portugués), y puedes cambiarlo manualmente desde un **selector de idioma**.
 
@@ -30,10 +30,12 @@ El sitio detecta automáticamente el idioma del navegador (Español o Portugués
 ├── css/
 │   └── style.css
 ├── js/
-│   ├── main.js
-│   ├── experiences.js
 │   ├── education.js
-│   └── lang.js
+│   ├── experiences.js
+│   ├── main_lang.js
+│   ├── main.js
+│   ├── perfil.js
+│   └── skills.js
 ├── img/
 │   └── (imágenes de perfil, logos, badges, etc.)
 ```
