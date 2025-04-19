@@ -153,7 +153,6 @@ nav a.active-link {
 .hero h1 {
     margin: 0;
     font-size: 32px;
-    /* ✅ asegura tamaño uniforme */
 }
 
 .hero h3 {
@@ -225,7 +224,6 @@ nav a.active-link {
     margin-left: 30px;
 }
 
-/* Timeline vertical line */
 .timeline::before {
     content: "";
     position: absolute;
@@ -238,7 +236,6 @@ nav a.active-link {
     z-index: 0;
 }
 
-/* Individual item */
 .timeline-item {
     display: flex;
     justify-content: space-between;
@@ -248,7 +245,6 @@ nav a.active-link {
     padding-right: 16px;
 }
 
-/* Card on the left */
 .timeline-card {
     width: 70%;
     background: #f9f9f9;
@@ -273,7 +269,6 @@ nav a.active-link {
     font-weight: normal;
 }
 
-/* Tech badges */
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
@@ -287,11 +282,8 @@ nav a.active-link {
     color: white;
     border-radius: 999px;
     padding: 4px 10px;
-    /* antes 6px 12px */
     font-size: 11px;
-    /* antes 13px */
     gap: 4px;
-    /* antes 6px */
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
 }
@@ -301,7 +293,6 @@ nav a.active-link {
     height: 16px;
 }
 
-/* Date on the right */
 .timeline-date {
     width: 30%;
     text-align: left;
@@ -311,7 +302,6 @@ nav a.active-link {
     z-index: 1;
 }
 
-/* Bullet for each entry */
 .timeline-item::after {
     content: "";
     position: absolute;
@@ -324,30 +314,6 @@ nav a.active-link {
     border-radius: 50%;
     z-index: 2;
     transform: translateX(-50%);
-}
-
-@media (max-width: 768px) {
-    .timeline {
-        margin-left: 0;
-    }
-
-    .timeline::before {
-        left: 20px;
-    }
-
-    .timeline-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .timeline-card,
-    .timeline-date {
-        width: 100%;
-    }
-
-    .timeline-item::after {
-        left: 20px;
-    }
 }
 
 .skills-group {
@@ -395,12 +361,6 @@ nav a.active-link {
     transition: width 0.5s ease;
 }
 
-/* Responsive en móvil: 1 columna */
-@media (max-width: 768px) {
-    .skills-two-cols {
-        grid-template-columns: 1fr;
-    }
-}
 
 .contact-grid {
     display: flex;
@@ -494,7 +454,6 @@ nav a.active-link {
 
 .footer-logo {
     max-height: 140px;
-    /* ✅ aumenta el tamaño */
     opacity: 0.95;
     transition: transform 0.3s ease;
 }
@@ -527,8 +486,33 @@ nav a.active-link {
     font-size: 13px;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
+    .timeline {
+        margin-left: 0;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .timeline-card,
+    .timeline-date {
+        width: 100%;
+    }
+
+    .timeline-item::after {
+        left: 20px;
+    }
+
+    .skills-two-cols {
+        grid-template-columns: 1fr;
+    }
+
     .footer-top {
         flex-direction: column;
         align-items: center;
