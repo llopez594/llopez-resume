@@ -277,6 +277,10 @@ nav a.active-link {
     font-weight: normal;
 }
 
+.timeline-card .timeline-date-mobile {
+    display: none;
+}
+
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
@@ -633,6 +637,7 @@ nav a.active-link {
 
 
 
+
     .content {
         width: 100%;
         padding: 0;
@@ -678,28 +683,55 @@ nav a.active-link {
 
 
 
-
     .timeline {
         margin-left: 0;
+        padding-left: 0;
     }
 
     .timeline::before {
-        left: 20px;
+        /* Oculta la línea vertical */
+        display: none;
     }
 
     .timeline-item {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+        gap: 8px;
+        padding: 0;
     }
 
-    .timeline-card,
+    .timeline-card {
+        width: 100% !important;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        border-radius: 10px;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin: 0 auto 2px auto;
+        padding: 16px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+
     .timeline-date {
-        width: 100%;
+        display: none !important;
     }
 
     .timeline-item::after {
-        left: 20px;
+        /* Oculta el punto */
+        display: none;
     }
+
+    .timeline-card .timeline-date-mobile {
+        display: block !important;
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 6px;
+        font-weight: normal;
+        margin: 4px 0 8px;
+    }
+
+
+
 
     .skills-two-cols {
         grid-template-columns: 1fr;
