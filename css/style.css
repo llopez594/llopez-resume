@@ -645,6 +645,39 @@ nav a.active-link {
 
 
 
+    .education-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding-right: 0;
+        position: relative;
+    }
+
+    .education-item img {
+        align-self: flex-start;
+    }
+
+    .education-content {
+        width: 100%;
+    }
+
+    .education-content h4 {
+        text-align: left;
+    }
+
+    .education-content p {
+        text-align: justify;
+    }
+
+    .date-range {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+
+
+
 
     .timeline {
         margin-left: 0;
