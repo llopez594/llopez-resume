@@ -18,6 +18,7 @@ function renderExperiences(lang) {
         <div class="timeline-card left">
           <h4>${exp.title}</h4>
           <p class="company">${exp.company}</p>
+          <p class="timeline-date-mobile">${exp.duration}</p>
           <div class="tech-stack">${chips}</div>
         </div>
         <div class="timeline-date right">${exp.duration}</div>
