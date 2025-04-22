@@ -61,13 +61,5 @@ const perfilData = {
             estou aberto a oportunidades <strong>remotas ou presenciais</strong>, com alta disposição para participar de novos 
             projetos desafiadores.
         </p>
-        <p>
-            Hi, I'm <strong>Luis López</strong>, a backend developer with over 6 years of experience
-            building scalable web
-            solutions using Laravel, Node.js and modern database systems. I focus on clean architecture,
-            data-driven systems,
-            and team collaboration. I'm currently based in Brazil and open to remote or on-site
-            opportunities.
-        </p>
     `
 };
